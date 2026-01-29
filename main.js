@@ -1,4 +1,4 @@
-const app = VTTCue.createapp({
+const app = Vue.createApp({
 data() {
 return {
     product: 'socks'
