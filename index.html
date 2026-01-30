@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <title>Vue Mastery</title>
     <!-- Import Styles -->
-    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
   </head>
   <body>
     <div id="app">
     <div class="nav-bar"></div>
+
+    <div class="cart">CART ({{ cart }})</div>
 
     <div class="product-display">
     <div class="product-container">
@@ -27,6 +29,8 @@
       </ul>
       <div v-for="variant in variants" :key="variant.id">
         <p>{{ variant.color }}</p>
+        <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
+        <button class="button" v-on:click="addtocart">Add to cart</button>
       </div>
     </div>
     </div>
